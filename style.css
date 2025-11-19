@@ -1,0 +1,503 @@
+:root {
+  --bg-color: #fff7f8;
+  --bg-alt: #ffeef2;
+  --primary: #f29cae;
+  --primary-soft: rgba(242, 156, 174, 0.18);
+  --accent: #f5c6ce;
+  --text-main: #4a3b3f;
+  --text-sub: #9a7b80;
+  --radius-xl: 20px;
+  --radius-full: 999px;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Noto Serif SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: radial-gradient(circle at top, #ffeef5 0, #fff7f8 40%, #ffffff 100%);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+main#invitation {
+  max-width: 430px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.section {
+  padding: 3.2rem 1.4rem 3.6rem;
+  position: relative;
+}
+
+.section-inner {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  color: var(--text-main);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+  color: var(--text-sub);
+}
+
+/* 封面倒计时 */
+.cover-countdown {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+  min-width: 260px;
+  padding: 1rem 1.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.countdown-label {
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.countdown-time {
+  font-size: 1.02rem;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+}
+
+.countdown-time .cd-days {
+  font-weight: 600;
+  margin-right: 0.1rem;
+}
+
+.countdown-time .cd-h,
+.countdown-time .cd-m,
+.countdown-time .cd-s {
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-time .cd-sep {
+  margin: 0 0.06rem;
+}
+
+/* 封面 */
+.section-cover {
+  position: relative;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cover-img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 231, 237, 0.9) 0%,
+    rgba(255, 247, 248, 0.9) 40%,
+    rgba(255, 247, 248, 1) 100%
+  );
+}
+
+.cover-content {
+  position: absolute;
+  inset: auto 1.6rem 4.2rem;
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1.8rem 1.6rem 1.6rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  box-shadow: var(--shadow-soft);
+}
+
+.cover-tagline {
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.cover-names {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  color: var(--text-main);
+}
+
+.cover-date {
+  margin-top: 0.8rem;
+  font-size: 0.92rem;
+  color: var(--text-sub);
+}
+
+.cover-sub {
+  margin-top: 0.8rem;
+  font-size: 0.84rem;
+  color: var(--text-sub);
+}
+
+/* 封面新人圆形照片 */
+.cover-portrait {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-portrait-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 我们的故事 */
+.section-story {
+  background: radial-gradient(circle at top, #ffeef2, #fff7f8 40%, #ffffff 100%);
+}
+
+.story-text {
+  margin-top: 1.6rem;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--text-main);
+  text-align: justify;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: var(--radius-xl);
+  padding: 1.4rem 1.2rem;
+}
+
+/* 照片长卷 */
+.section-photos {
+  background: var(--bg-color);
+  padding-bottom: 3rem;
+}
+
+.photos-container {
+  margin: 1.4rem auto 0;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding-bottom: 1.5rem;
+}
+
+.photo-item {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  transform-origin: center center;
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease-out;
+}
+
+.photo-item.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.photo-item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.14);
+}
+
+/* 婚礼信息 */
+.section-info {
+  background: linear-gradient(180deg, #ffffff 0%, #fff4f5 40%, #ffeef2 100%);
+}
+
+.info-block {
+  margin-top: 1.4rem;
+  padding: 1.2rem 1rem;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+.info-label {
+  font-size: 0.92rem;
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.info-value {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.8;
+}
+
+.qr-wrapper {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.qr-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 24px;
+  padding: 0.6rem;
+  background: var(--primary-soft);
+}
+
+/* 结尾页 */
+.section-end {
+  background: radial-gradient(circle at bottom, #ffeef2, #fff7f8 40%, #ffffff 100%);
+}
+
+.end-thanks {
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 0.16em;
+  margin-top: 0.6rem;
+}
+
+.end-text {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  text-align: center;
+}
+
+.end-img {
+  margin: 1.4rem auto 0;
+  max-width: 260px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* 背景特效层 */
+#effects-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heart,
+.petal {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.heart {
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 30% 30%, #fff 0, #f29cae 40%, #f27e9f 100%);
+  transform: rotate(-45deg);
+  border-radius: 2px;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -6px;
+  left: 0;
+}
+
+.heart::after {
+  left: 6px;
+  top: 0;
+}
+
+.petal {
+  width: 18px;
+  height: 24px;
+  background: radial-gradient(circle at 30% 10%, #fff 0, #f5c6ce 40%, #f29cae 100%);
+  border-radius: 60% 40% 60% 40% / 70% 60% 40% 40%;
+  opacity: 0.9;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(600px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1.2s ease-out both;
+}
+
+.animate-section {
+  opacity: 1;
+  transform: none;
+  animation: fadeInUp 0.9s ease-out both;
+}
+
+/* 音乐按钮 */
+#music-btn {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#music-btn::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image:
+    linear-gradient(90deg, transparent 0 40%, var(--primary) 40% 60%, transparent 60% 100%),
+    radial-gradient(circle at 30% 30%, var(--primary) 0, var(--primary) 50%, transparent 52%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%;
+}
+
+#music-btn.is-paused::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 24px;
+  background: #e45c6e;
+  transform: rotate(-30deg);
+  border-radius: 999px;
+}
+
+#music-btn.is-playing {
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 360px) {
+  .section {
+    padding-inline: 1rem;
+  }
+
+  .cover-content {
+    inset-inline: 1rem;
+  }
+}
+/* 添加在 style.css 末尾 */
+.end-thanks-img {
+  width: 200px;
+  height: 200px;
+  margin: 1.5rem auto 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f5c6ce, #f29cae, #f27e9f);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.end-thanks-img::before {
+  content: "❤️";
+  font-size: 6.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
